@@ -20,7 +20,7 @@ else if(gender == "female" || gender == "Female"){
 }
 
 else{
-    alert("Welcome to Our Cafe 🌹");
+    alert("Welcome to Our Cafe "+ name + " 🌹");
 }
 
 
@@ -35,11 +35,9 @@ else
 }
 
 if((gender == "male" || gender == "Male") && order != "" && drink != ""){
-    alert("You have ordered a "+ drink +" "+ order + " Mr. " + name + " ❤️ " + "Your Order is ready. ✔️");
     console.log(name + " ordered a " + drink +" "+ order);
 }
 else if((gender == "female" || gender == "Female") && order != "" && drink != ""){
-    alert("You have ordered a "+ drink +" "+ order + " Ms. " + name + " ❤️ " + "Your Order is ready. ✔️");
     console.log(name + " ordered a " + drink +" "+ order);
 
 }
