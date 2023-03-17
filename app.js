@@ -34,10 +34,10 @@ else
     alert("Please, Order now. ✏️");
 }
 
-if((gender == "male" || gender == "Male") && order != "" && drink != ""){
+if((gender == "male" || gender == "Male") || (order != "" && drink != "")){
     console.log(name + " ordered a " + drink +" "+ order);
 }
-else if((gender == "female" || gender == "Female") && order != "" && drink != ""){
+else if((gender == "female" || gender == "Female") || (order != "" && drink != "")){
     console.log(name + " ordered a " + drink +" "+ order);
 
 }
