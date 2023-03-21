@@ -51,6 +51,11 @@ while (user_name == ""){
     user_name = prompt("▶ Enter Your Name ⌨️");
 }
 
+let age = prompt("▶ Enter Your Age ⌨️");
+
+while (age == ""){
+    age = prompt("▶ Enter Your Age ⌨️");
+}
 
 let gender = prompt("▶ Enter Your Gender (Male or Female) 👩 👨");
 gender = getGender(gender, user_name);
@@ -80,3 +85,50 @@ array.push(drink, order);
 for(let i = 0; i < array.length ; i++){
     console.log(array[i]);
 }
+
+
+// create a div and give it an id so you can read it in js 
+// - In the JS file : 
+//      Create a div > paragraph > ul > li 
+//      Fill the data you got from the user into the previous elements : 
+//      Write it back to the html page 
+
+
+const getDiv = document.getElementById("user-info");
+
+
+const div_2 = document.createElement("div");
+
+
+
+const div_p = document.createElement("p");
+
+div_p.textContent = ` ☕︎❤️${user_name}❤️☕︎ `;
+
+div_2.appendChild(div_p);
+getDiv.appendChild(div_2); 
+
+const div_ul = document.createElement("ul");
+
+div_2.appendChild(div_ul);
+
+const div_ul_li_1 = document.createElement("li");
+div_ul_li_1.textContent = `Gender  :  ${gender}`;
+
+const div_ul_li_2 = document.createElement("li");
+div_ul_li_2.textContent = `Age  :  ${age}`;
+
+const div_ul_li_3 = document.createElement("li");
+div_ul_li_3.textContent = `Drink  :  ${drink} ${order}`;
+
+
+div_ul.appendChild(div_ul_li_1);
+div_ul.appendChild(div_ul_li_2);
+div_ul.appendChild(div_ul_li_3);
+
+
+
+
+
+console.log(getDiv);
+
