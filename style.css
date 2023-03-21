@@ -1,6 +1,7 @@
 body {
   overflow-x: hidden;
   overflow-y: hidden;
+  
 }
 #all {
   background-color: black;
@@ -63,6 +64,35 @@ body {
 
 }
 
+#user-info{
+  position: relative;
+  font-family: "DM Serif Display";
+  font-weight: bold;
+  color: #e2e3da;
+  text-shadow: 0 0 50px #d4af86;
+  text-transform: capitalize;
+  background: black;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0 0 15px #2b2b2b;
+
+}
+#user-info p{
+  text-transform: uppercase;
+
+}
+
+#user-info li{
+  list-style-type: none;
+  text-align-last: start;
+  text-align: center;
+  border-bottom: solid;
+  padding-left: 0;
+}
+
+#user-info ul {
+  padding-left: 0;
+}
 #hero-button {
   position: relative;
   background-color: black;
