@@ -99,7 +99,13 @@ let age;
 let drink;
 let order;
 
+const getDiv = document.getElementById("user-info");
+const div_2 = document.createElement("div");
 
+const div_p = document.createElement("p");
+const div_ul = document.createElement("ul");
+const div_ul_li_2 = document.createElement("li");
+const div_ul_li_3 = document.createElement("li");
 
 const cafe_form = document.getElementById("contactForm");
 
@@ -135,31 +141,24 @@ console.log(user_name,age,drink,order);
 
 render(user_name,age,drink,order);
 
+cafe_form.reset();
+
 });
 
 
 function render(user_name,age,drink,order){
-    const getDiv = document.getElementById("user-info");
-    const div_2 = document.createElement("div");
-
-
-const div_p = document.createElement("p");
-
-div_p.textContent = ` ☕︎❤️${user_name}❤️☕︎ `;
+    
+div_p.textContent = ` ☕︎❤️${user_name} ❤️☕︎ `;
 
 div_2.appendChild(div_p);
 getDiv.appendChild(div_2); 
 
-const div_ul = document.createElement("ul");
 
 div_2.appendChild(div_ul);
 
 
 
-const div_ul_li_2 = document.createElement("li");
 div_ul_li_2.textContent = `Age  :  ${age}`;
-
-const div_ul_li_3 = document.createElement("li");
 div_ul_li_3.textContent = `Drink  :  ${drink} ${order}`;
 
 
@@ -167,9 +166,6 @@ div_ul.appendChild(div_ul_li_2);
 div_ul.appendChild(div_ul_li_3);
 
 }
-
-
-
 
 
 
