@@ -12,79 +12,79 @@
 // +
 // Create a function for the gender question and call it in the proper place ✔️
 
-function getGender(userGender, Username){
+// function getGender(userGender, Username){
 
-    if(userGender == "male" || userGender == "Male"){
-        alert("Welcome to Our Cafe Mr. "+ Username + " 🌹" );
-    }
-    else if(userGender == "female" || userGender == "Female"){
-        alert("Welcome to Our Cafe Ms. " + Username + " 🌹");
-    }
+//     if(userGender == "male" || userGender == "Male"){
+//         alert("Welcome to Our Cafe Mr. "+ Username + " 🌹" );
+//     }
+//     else if(userGender == "female" || userGender == "Female"){
+//         alert("Welcome to Our Cafe Ms. " + Username + " 🌹");
+//     }
     
-    else{
+//     else{
        
-        userGender = prompt("Please, enter your gender."); 
+//         userGender = prompt("Please, enter your gender."); 
     
-    while((userGender != "male" && userGender != "female") && (userGender != "Male" && userGender != "Female"))
-    {
-        userGender = prompt("Please, re-enter your gender correctly.");
-    }
+//     while((userGender != "male" && userGender != "female") && (userGender != "Male" && userGender != "Female"))
+//     {
+//         userGender = prompt("Please, re-enter your gender correctly.");
+//     }
     
-    if(userGender == "male" || userGender == "Male"){
-        alert("Welcome to Our Cafe Mr. "+ Username + " 🌹" );
-    }
+//     if(userGender == "male" || userGender == "Male"){
+//         alert("Welcome to Our Cafe Mr. "+ Username + " 🌹" );
+//     }
 
-    else if(userGender == "female" || userGender == "Female"){
-        alert("Welcome to Our Cafe Ms. " + Username + " 🌹");
-    }
+//     else if(userGender == "female" || userGender == "Female"){
+//         alert("Welcome to Our Cafe Ms. " + Username + " 🌹");
+//     }
     
-    }
+//     }
     
-    return userGender;
-}
+//     return userGender;
+// }
 
 
-const array = [];
-let user_name = prompt("▶ Enter Your Name ⌨️");
+// const array = [];
+// let user_name = prompt("▶ Enter Your Name ⌨️");
 
-while (user_name == ""){
-    user_name = prompt("▶ Enter Your Name ⌨️");
-}
+// while (user_name == ""){
+//     user_name = prompt("▶ Enter Your Name ⌨️");
+// }
 
-let age = prompt("▶ Enter Your Age ⌨️");
+// let age = prompt("▶ Enter Your Age ⌨️");
 
-while (age == ""){
-    age = prompt("▶ Enter Your Age ⌨️");
-}
+// while (age == ""){
+//     age = prompt("▶ Enter Your Age ⌨️");
+// }
 
-let gender = prompt("▶ Enter Your Gender (Male or Female) 👩 👨");
-gender = getGender(gender, user_name);
+// let gender = prompt("▶ Enter Your Gender (Male or Female) 👩 👨");
+// gender = getGender(gender, user_name);
 
-array.push(user_name, gender);
+// array.push(user_name, gender);
 
-let drink = prompt("Do you want a hot or cold drink? ☕️ 🍹 🍸");
+// let drink = prompt("Do you want a hot or cold drink? ☕️ 🍹 🍸");
 
-while(drink != "cold" && drink != "hot"){
-    drink = prompt("Please, what do you want (hot) or (cold) drink?");
+// while(drink != "cold" && drink != "hot"){
+//     drink = prompt("Please, what do you want (hot) or (cold) drink?");
 
-}
-
-
-let order = prompt("Please, Write the name of the drink you want. ✏️");
-while(order == ""){
-    order = prompt("Please, enter your order.");
-}
-
-    alert("Your drink is getting prepared...⏳");
+// }
 
 
+// let order = prompt("Please, Write the name of the drink you want. ✏️");
+// while(order == ""){
+//     order = prompt("Please, enter your order.");
+// }
+
+//     alert("Your drink is getting prepared...⏳");
 
 
-array.push(drink, order);
 
-for(let i = 0; i < array.length ; i++){
-    console.log(array[i]);
-}
+
+// array.push(drink, order);
+
+// for(let i = 0; i < array.length ; i++){
+//     console.log(array[i]);
+// }
 
 
 // create a div and give it an id so you can read it in js 
@@ -94,11 +94,49 @@ for(let i = 0; i < array.length ; i++){
 //      Write it back to the html page 
 
 
-const getDiv = document.getElementById("user-info");
+let user_name;
+let age;
+let drink;
+let order;
 
 
-const div_2 = document.createElement("div");
 
+const cafe_form = document.getElementById("contactForm");
+
+cafe_form.addEventListener("submit", (event) => {
+
+event.preventDefault();
+
+user_name = event.target.userName.value;
+
+age = event.target.user_age.value;
+
+
+let isCold = event.target.cold.checked;
+let isHot = event.target.hot.checked;
+
+if (isCold || isHot) {
+    if(isCold && isHot) drink = event.target.cold.value  + " And " + event.target.hot.value;
+    else if(isCold) drink = event.target.cold.value;
+    else
+    drink = event.target.hot.value;
+}
+
+
+
+
+order = event.target.drinkType.value;
+
+console.log(user_name,age,drink,order);
+
+render(user_name,age,drink,order);
+
+});
+
+
+function render(user_name,age,drink,order){
+    const getDiv = document.getElementById("user-info");
+    const div_2 = document.createElement("div");
 
 
 const div_p = document.createElement("p");
@@ -112,8 +150,7 @@ const div_ul = document.createElement("ul");
 
 div_2.appendChild(div_ul);
 
-const div_ul_li_1 = document.createElement("li");
-div_ul_li_1.textContent = `Gender  :  ${gender}`;
+
 
 const div_ul_li_2 = document.createElement("li");
 div_ul_li_2.textContent = `Age  :  ${age}`;
@@ -122,13 +159,24 @@ const div_ul_li_3 = document.createElement("li");
 div_ul_li_3.textContent = `Drink  :  ${drink} ${order}`;
 
 
-div_ul.appendChild(div_ul_li_1);
 div_ul.appendChild(div_ul_li_2);
 div_ul.appendChild(div_ul_li_3);
 
+}
 
 
 
 
-console.log(getDiv);
+
+
+
+
+
+
+
+
+
+
+
+
 

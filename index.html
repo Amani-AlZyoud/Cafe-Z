@@ -32,7 +32,7 @@
 
    
   </head>
-  <body>
+  <body style="background-color: black">
     
     <!-- HEADER -->
     <nav class="navbar navbar-expand-lg" id="nav-edit-color">
@@ -103,10 +103,7 @@
             We hope you have a fantastic time here     </p>
 
            
-            <!-- DOM DIV -->
-            <div class="card mb-4 fs-4" id="user-info">
-           
-            </div>
+            
 
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <button
@@ -121,12 +118,54 @@
         </div>
       </div>
       
-          
+      
       
      
     </div>
 
 
+
+    <div class="row fs-5 " style="justify-content: space-evenly;">
+      <form class="col-8" id="contactForm" data-sb-form-api-token="API_TOKEN">
+          <div class="mb-3">
+              <label class="form-label" for="userName">User Name</label>
+              <input class="form-control" id="userName" type="text" placeholder="User Name" name="userName" value="" data-sb-validations="required" />
+              <div class="invalid-feedback" data-sb-feedback="userName:required">User Name is required.</div>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="age">Age</label>
+              <input class="form-control" id="age" type="text" placeholder="Age" name="user_age" value="" data-sb-validations="required" />
+              <div class="invalid-feedback" data-sb-feedback="age:required">Age is required.</div>
+          </div>
+          <div class="mb-3">
+              <label class="form-label d-block">Drink</label>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" id="cold" type="checkbox" name="cold_drink" value="Cold" data-sb-validations="" />
+                  <label class="form-check-label" for="cold">Cold</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" id="hot" type="checkbox" name="hot_drink" value="Hot" data-sb-validations="" />
+                  <label class="form-check-label" for="hot">Hot</label>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="drinkTypeEgTea">Drink Type</label>
+              <input class="form-control" id="drinkTypeEgTea" type="text" placeholder="Drink Type eg. Tea" name="drinkType" data-sb-validations="required" />
+              <div class="invalid-feedback" data-sb-feedback="drinkTypeEgTea:required">Drink Type eg. Tea is required.</div>
+          </div>
+      
+       
+          <div class="d-grid">
+              <button class="btn btn-primary btn-lg " id="submitButton" type="submit">Submit</button>
+          </div>
+      </form>
+
+
+      <!-- DOM DIV -->
+      <div class="col-2 card mb-4 fs-4" id="user-info">
+           
+      </div>
+  </div>
 
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script>
