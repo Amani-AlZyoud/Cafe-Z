@@ -1,6 +1,7 @@
 body {
   overflow-x: hidden;
-  background-color: black;
+  background: rgb(226,227,218);
+background: radial-gradient(circle, rgba(226,227,218,1) 0%, rgba(212,175,134,1) 100%);
 }
 #all {
   background-color: black;
@@ -70,11 +71,10 @@ body {
   color: #e2e3da;
   text-shadow: 0 0 50px #d4af86;
   text-transform: capitalize;
-  background: rgb(0, 0, 0);
-  justify-content: center;
-  padding: 1rem;
-  width:fit-content;
-
+  background: #00000093;
+  margin: auto;
+  width: auto;
+  border: none;
 
 }
 #user-info p{
@@ -103,8 +103,9 @@ body {
   text-transform: capitalize;
   background-color: #000000;
   box-shadow: 0 0 50px #000000;
-  width: 45rem;
-  
+  width: 30rem;
+  justify-self: center;
+
 }
 
 
