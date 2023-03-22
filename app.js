@@ -122,6 +122,10 @@ if (isCold || isHot) {
     drink = event.target.hot.value;
 }
 
+else
+{
+    drink = "";
+}
 
 
 
